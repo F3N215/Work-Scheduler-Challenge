@@ -14,8 +14,12 @@ $(".saveButton").on("click", function(){
   var time = $(this).parent().attr("id");
 
   localStorage.setItem(time, text);
-})
+});
 
+function trackHours(){
+  var currentHour = dayjs().hour();
+  var hourBlock = parseInt($(this).attr("id").split("-")[1]);
+}
 })
 
 $(function () {
