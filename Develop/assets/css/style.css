@@ -1,11 +1,11 @@
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Afacad', sans-serif;
   font-size: 16px;
 }
 
 textarea {
   background: transparent;
-  border: none;
+  border-style: double;
   resize: none;
   color: #000000;
   border-left: 1px solid black;
@@ -51,11 +51,19 @@ textarea {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #06aed5;
+  background-color: #127c22;
   color: white;
+  cursor: pointer;
+  box-shadow: 0 5px #999;
 }
 
 .saveBtn i:hover {
   font-size: 20px;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.saveBtn:active {
+  background-color: #ffffff;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
 }

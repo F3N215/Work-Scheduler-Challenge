@@ -2,12 +2,13 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 
-/* function displayTime() {
+function displayTime() {
   var rightNow = dayjs().format('MMM DD, YYYY [at] hh:mm:ss a');
   timeDisplayEl.text(rightNow);
-} */
+}
 
-$document.ready (function() {
+
+$(document).ready(function () {
 var showTime = document.querySelector("#currentDay"); // displays current date/time
 var currentTime = dayjs().format("dddd,MMMM D, YYYY, h:mm:ss a");
 
@@ -26,25 +27,22 @@ function trackHours(){ // pull number of hours
   $(".time-block").each(function () {
     var hourBlock = parseInt($(this).attr("id").split("-")[1]);
 
-    if (hourBlock < currentHour) {
-      $(this).addClass("past");
-    } else if (hourBlock === currentHour) {
-      $(this).pullClass("past");
-      $(this).addClass("present");
-    } else {
-      $(this).pullClass("past");
-      $(this).pullClass("present");
-      $(this).addClass("future");
-    }  
-  });
+      if (hourBlock < currentHour) {
+        $(this).addClass("past");
+      } else if (hourBlock === currentHour) {
+        $(this).pullClass("past");
+        $(this).addClass("present");
+      } else {
+        $(this).pullClass("past");
+        $(this).pullClass("present");
+        $(this).addClass("future");
+      }  
+    });
 }
+trackHours();
 
-}
 
-
-})
-
-$(function () {
+$(function () {});
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -66,4 +64,3 @@ $(function () {
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
-});
