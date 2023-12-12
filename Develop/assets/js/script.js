@@ -10,6 +10,10 @@ function displayTime() {
 
 $(document).ready(function () {
 var showTime = document.querySelector("#currentDay"); // returns current date/time
+
+$document.ready (function() {
+var showTime = document.querySelector("#currentDay"); // displays current date/time
+
 var currentTime = dayjs().format("dddd,MMMM D, YYYY, h:mm:ss a");
 
 showTime.textContent = currentTime;
