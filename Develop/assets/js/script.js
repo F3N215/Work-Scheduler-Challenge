@@ -9,7 +9,7 @@ function displayTime() {
 
 
 $(document).ready(function () {
-var showTime = document.querySelector("#currentDay"); // displays current date/time
+var showTime = document.querySelector("#currentDay"); // returns current date/time
 var currentTime = dayjs().format("dddd,MMMM D, YYYY, h:mm:ss a");
 
 showTime.textContent = currentTime;
@@ -19,6 +19,7 @@ $(".saveBtn").on("click", function(){
   var time = $(this).parent().attr("id");
   localStorage.setItem(time, text);
 });
+})
 
 function trackHours(){ // pull number of hours
   var currentHour = dayjs().hour();
