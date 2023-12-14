@@ -10,24 +10,22 @@ function displayTime() { // returns current time in 24hrs
   timeDisplayEl.text(rightNow);
 }
 
-$document.ready (function() {
+$document.ready(function() {
 
 var showTime = document.querySelector("#currentDay"); // displays current date/time
 var currentTime = dayjs().format("dddd, MMMM D, YYYY, HH:mm:ss");
 showTime.textContent = currentTime;
 
-$(".saveBtn").on("click", function(){ // add event listener, returns row id
-  var text = $(this).siblings(".description").val();
-  var time = $(this).parent().attr("id");
-  localStorage.setItem(time, text); // saves row id to local storage
-});
+// save
+  $(".saveBtn").on("click", function(){ // add event listener, returns row id
+    var text = $(this).siblings(".description").val();
+    var time = $(this).parent().attr("id");
+    localStorage.setItem(time, text); // saves row id to local storage
+  });
 })
 
 function trackHours(){ // pull number of hours, update class
   var currentHour = dayjs().hour();
-
-  $(".time-block").each(function() {
-    //var hourBlock = parseInt($(this).attr("id").split("-")[1]);
 
     $(".time-block").each(function() {
       const hourBlock = parseInt($(this).attr("id").split("-")[1]);
@@ -44,14 +42,12 @@ function trackHours(){ // pull number of hours, update class
       }  
   });
 }
-
-  trackHours();
-
+trackHours();
 
 function displayTime() {
   $(".time-block").each(function(){
     var hourInput = $(this).attr("id");
-    $(this).children(".description").val(localStorage.getItem(hourBlock));
+    $(this).children(".description").val(localStorage.getItem(hourInput));
   });
 } 
 displayTime();
