@@ -5,7 +5,7 @@
 /* $(document).ready (function() {
 var showTime = document.querySelector("#currentDay"); // returns current date/time */
 
-function displayTime() {
+function displayTime() { // returns current time in 24hrs
   var rightNow = dayjs().format('MMM DD, YYYY [at] HH:mm:ss');
   timeDisplayEl.text(rightNow);
 }
@@ -13,7 +13,7 @@ function displayTime() {
 $document.ready (function() {
 
 var showTime = document.querySelector("#currentDay"); // displays current date/time
-var currentTime = dayjs().format("dddd,MMMM D, YYYY, HH:mm:ss");
+var currentTime = dayjs().format("dddd, MMMM D, YYYY, HH:mm:ss");
 showTime.textContent = currentTime;
 
 $(".saveBtn").on("click", function(){ // add event listener, returns row id
@@ -23,12 +23,14 @@ $(".saveBtn").on("click", function(){ // add event listener, returns row id
 });
 })
 
-function trackHours(){ // pull number of hours
+function trackHours(){ // pull number of hours, update class
   var currentHour = dayjs().hour();
-  var hourBlock = parseInt($(this).attr("id").split("-")[1]);
 
-  $(".time-block").each(function () {
-    var hourBlock = parseInt($(this).attr("id").split("-")[1]);
+  $(".time-block").each(function() {
+    //var hourBlock = parseInt($(this).attr("id").split("-")[1]);
+
+    $(".time-block").each(function() {
+      const hourBlock = parseInt($(this).attr("id").split("-")[1]);
 
       if (hourBlock < currentHour) { // compare id hour to current hour
         $(this).addClass("past");
@@ -37,15 +39,17 @@ function trackHours(){ // pull number of hours
         $(this).addClass("present");
       } else {
         $(this).removeClass("past");
-        $(this).removeClassClass("present");
+        $(this).removeClass("present");
         $(this).addClass("future");
       }  
-    });
+  });
 }
-trackHours();
+
+  trackHours();
+
 
 function displayTime() {
-  $(."time-block").each(function(){
+  $(".time-block").each(function(){
     var hourInput = $(this).attr("id");
     $(this).children(".description").val(localStorage.getItem(hourBlock));
   });
