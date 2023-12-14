@@ -1,16 +1,14 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
-
-/* $(document).ready (function() {
-var showTime = document.querySelector("#currentDay"); // returns current date/time */
+$document.ready(function() {
 
 function displayTime() { // returns current time in 24hrs
   var rightNow = dayjs().format('MMM DD, YYYY [at] HH:mm:ss');
   timeDisplayEl.text(rightNow);
 }
 
-$document.ready(function() {
+function displayDate() {
+  var currentDate = dayjas().format('dddd, MMMM D, YYYY');
+  $("#currentDate").text(currentDate);
+}
 
 var showTime = document.querySelector("#currentDay"); // displays current date/time
 var currentTime = dayjs().format("dddd, MMMM D, YYYY, HH:mm:ss");
@@ -50,7 +48,7 @@ function displayTime() {
     $(this).children(".description").val(localStorage.getItem(hourInput));
   });
 } 
-displayTime();
+setInterval(displayTime, 1000);
 
 $(function () {});
   // TODO: Add a listener for click events on the save button. This code should
