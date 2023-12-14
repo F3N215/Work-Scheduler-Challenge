@@ -35,11 +35,11 @@ function trackHours(){ // pull number of hours, update class
       if (hourBlock < currentHour) { // compare id hour to current hour
         $(this).addClass("past");
       } else if (hourBlock === currentHour) {
-        $(this).removeClass("past");
+       // $(this).removeClass("past");
         $(this).addClass("present");
       } else {
-        $(this).removeClass("past");
-        $(this).removeClass("present");
+       // $(this).removeClass("past");
+       // $(this).removeClass("present");
         $(this).addClass("future");
       }  
   });
