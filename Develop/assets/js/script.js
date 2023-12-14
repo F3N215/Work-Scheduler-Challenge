@@ -2,22 +2,22 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 
-function displayTime() {
-  var rightNow = dayjs().format('MMM DD, YYYY [at] hh:mm:ss a');
-  timeDisplayEl.text(rightNow);
-}
-
 /* $(document).ready (function() {
 var showTime = document.querySelector("#currentDay"); // returns current date/time */
+
+function displayTime() {
+  var rightNow = dayjs().format('MMM DD, YYYY [at] HH:mm:ss');
+  timeDisplayEl.text(rightNow);
+}
 
 $document.ready (function() {
 
 var showTime = document.querySelector("#currentDay"); // displays current date/time
-var currentTime = dayjs().format("dddd,MMMM D, YYYY, h:mm:ss a");
+var currentTime = dayjs().format("dddd,MMMM D, YYYY, HH:mm:ss");
 showTime.textContent = currentTime;
 
 $(".saveBtn").on("click", function(){ // add event listener, returns row id
-  var text = $(this).sublings(".description").val();
+  var text = $(this).siblings(".description").val();
   var time = $(this).parent().attr("id");
   localStorage.setItem(time, text); // saves row id to local storage
 });
@@ -30,20 +30,27 @@ function trackHours(){ // pull number of hours
   $(".time-block").each(function () {
     var hourBlock = parseInt($(this).attr("id").split("-")[1]);
 
-      if (hourBlock < currentHour) {
+      if (hourBlock < currentHour) { // compare id hour to current hour
         $(this).addClass("past");
       } else if (hourBlock === currentHour) {
-        $(this).pullClass("past");
+        $(this).removeClass("past");
         $(this).addClass("present");
       } else {
-        $(this).pullClass("past");
-        $(this).pullClass("present");
+        $(this).removeClass("past");
+        $(this).removeClassClass("present");
         $(this).addClass("future");
       }  
     });
 }
 trackHours();
 
+function displayTime() {
+  $(."time-block").each(function(){
+    var hourInput = $(this).attr("id");
+    $(this).children(".description").val(localStorage.getItem(hourBlock));
+  });
+} 
+displayTime();
 
 $(function () {});
   // TODO: Add a listener for click events on the save button. This code should
