@@ -1,9 +1,9 @@
 $(document).ready(function() {
 
-function displayTime() { // returns current time in 24hrs
-  var rightNow = dayjs().format('MMM DD, YYYY [at] HH:mm:ss');
-  timeDisplayEl.text(rightNow);
-}
+// function displayTime() { // returns current time in 24hrs
+//   var rightNow = dayjs().format('MMM DD, YYYY [at] HH:mm:ss');
+//   timeDisplayEl.text(rightNow);
+// }
 
 function displayDate() {
   var currentDate = dayjas().format('dddd, MMMM D, YYYY');
@@ -29,15 +29,16 @@ function trackHours(){ // pull number of hours, update class
       const hourBlock = parseInt($(this).attr("id").split("-")[1]);
       var textarea = $(this).find("description");
       var savedText = localStorage.getItem("input-" + hourBlock);
+      // console.log(localStorage)
 
       if (hourBlock < currentHour) { // compare id hour to current hour
         $(this).addClass("past");
       } else if (hourBlock === currentHour) {
-       // $(this).removeClass("past");
+        $(this).removeClass("past");
         $(this).addClass("present");
       } else {
-       // $(this).removeClass("past");
-       // $(this).removeClass("present");
+        $(this).removeClass("past");
+        $(this).removeClass("present");
         $(this).addClass("future");
       }  
   });
@@ -48,13 +49,14 @@ function displayTime() {
   $(".time-block").each(function(){
     var hourInput = $(this).attr("id");
     $(this).children(".description").val(localStorage.getItem(hourInput));
+    console.log(localStorage)
   });
 } 
 
-// setInterval(function() {
-  //  displayTime();
-  //  displayDate();
-  //}, 1000);
+setInterval(function() {
+     displayTime();
+     displayDate();
+});
 
 
 // $(function () {});
