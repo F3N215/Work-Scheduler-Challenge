@@ -23,13 +23,12 @@ setInterval(function() {
     localStorage.setItem(time, text); // saves row id to local storage
   });
 
-function trackHours(){ // pull number of hours, update class
+function trackHours(){ // pulls number of hours, updates class
   const currentHour = dayjs().hour();
 
     $(".time-block").each(function() {
       const parentId = $(this).attr("id")
       const hourBlock = parseInt(parentId.split("-")[1]);
-      const textarea = $(this).find("description");
       const savedText = localStorage.getItem(parentId);
         $(this).children(".description").val(savedText);
 
@@ -37,12 +36,11 @@ function trackHours(){ // pull number of hours, update class
 
       if (hourBlock < currentHour) { // compare id hour to current hour
         $(this).addClass("past");
+        console.log("past")
       } else if (hourBlock === currentHour) {
-      //  $(this).removeClass("past");
         $(this).addClass("present");
+        console.log("present")
       } else {
-      //  $(this).removeClass("past");
-      //  $(this).removeClass("present");
         $(this).addClass("future");
       }  
   });
@@ -52,10 +50,7 @@ trackHours();
 function displayTime() {
   const currentTime = dayjs().format("dddd, MMMM D, YYYY, HH:mm:ss");
   showTime.textContent = currentTime;
-  console.log(currentTime) 
-
 }
-
 })
 
 // $(function () {});
