@@ -12,8 +12,15 @@ textarea {
   padding: 10px;
 }
 h1 {
-  font-style:'Afacad', sans-serif;
+  font-family:'Afacad', sans-serif;
 }
+
+#currentDate {
+  font-size: 18px; 
+  font-weight: bold;
+  color: #000000; 
+  margin-bottom: 10px;
+}   
 
 .description {
   white-space: pre-wrap;

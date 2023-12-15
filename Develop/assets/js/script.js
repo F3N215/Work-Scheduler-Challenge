@@ -1,4 +1,4 @@
-$document.ready(function() {
+$(document).ready(function() {
 
 function displayTime() { // returns current time in 24hrs
   var rightNow = dayjs().format('MMM DD, YYYY [at] HH:mm:ss');
@@ -10,7 +10,7 @@ function displayDate() {
   $("#currentDate").text(currentDate);
 }
 
-var showTime = document.querySelector("#currentDay"); // displays current date/time
+var showTime = document.querySelector("#currentDate"); // displays current date/time
 var currentTime = dayjs().format("dddd, MMMM D, YYYY, HH:mm:ss");
 showTime.textContent = currentTime;
 
@@ -27,6 +27,8 @@ function trackHours(){ // pull number of hours, update class
 
     $(".time-block").each(function() {
       const hourBlock = parseInt($(this).attr("id").split("-")[1]);
+      var textarea = $(this).find("description");
+      var savedText = localStorage.getItem("input-" + hourBlock);
 
       if (hourBlock < currentHour) { // compare id hour to current hour
         $(this).addClass("past");
@@ -48,9 +50,14 @@ function displayTime() {
     $(this).children(".description").val(localStorage.getItem(hourInput));
   });
 } 
-setInterval(displayTime, 1000);
 
-$(function () {});
+// setInterval(function() {
+  //  displayTime();
+  //  displayDate();
+  //}, 1000);
+
+
+// $(function () {});
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. <-- DONE
