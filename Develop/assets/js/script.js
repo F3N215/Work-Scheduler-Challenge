@@ -1,44 +1,48 @@
+// Use const until you can't, and then use let 
+
 $(document).ready(function() {
 
-// function displayTime() { // returns current time in 24hrs
-//   var rightNow = dayjs().format('MMM DD, YYYY [at] HH:mm:ss');
-//   timeDisplayEl.text(rightNow);
-// }
-
 function displayDate() {
-  var currentDate = dayjas().format('dddd, MMMM D, YYYY');
+  const currentDate = dayjas().format('dddd, MMMM D, YYYY');
   $("#currentDate").text(currentDate);
 }
 
-var showTime = document.querySelector("#currentDate"); // displays current date/time
-var currentTime = dayjs().format("dddd, MMMM D, YYYY, HH:mm:ss");
+const showTime = document.querySelector("#currentDate"); // displays current date/time in 24hr time
+const currentTime = dayjs().format("dddd, MMMM D, YYYY, HH:mm:ss");
 showTime.textContent = currentTime;
 
-// save
+setInterval(function() {
+  displayTime();
+} ,1000);
+
+// save button
   $(".saveBtn").on("click", function(){ // add event listener, returns row id
-    var text = $(this).siblings(".description").val();
-    var time = $(this).parent().attr("id");
+    // not a let, uses execution of different function via click event -- when this function runs it refers to its own particular instant
+    const text = $(this).siblings(".description").val(); 
+    const time = $(this).parent().attr("id");
     localStorage.setItem(time, text); // saves row id to local storage
   });
-})
 
 function trackHours(){ // pull number of hours, update class
-  var currentHour = dayjs().hour();
+  const currentHour = dayjs().hour();
 
     $(".time-block").each(function() {
-      const hourBlock = parseInt($(this).attr("id").split("-")[1]);
-      var textarea = $(this).find("description");
-      var savedText = localStorage.getItem("input-" + hourBlock);
-      // console.log(localStorage)
+      const parentId = $(this).attr("id")
+      const hourBlock = parseInt(parentId.split("-")[1]);
+      const textarea = $(this).find("description");
+      const savedText = localStorage.getItem(parentId);
+        $(this).children(".description").val(savedText);
+
+        console.log(hourBlock, currentHour)
 
       if (hourBlock < currentHour) { // compare id hour to current hour
         $(this).addClass("past");
       } else if (hourBlock === currentHour) {
-        $(this).removeClass("past");
+      //  $(this).removeClass("past");
         $(this).addClass("present");
       } else {
-        $(this).removeClass("past");
-        $(this).removeClass("present");
+      //  $(this).removeClass("past");
+      //  $(this).removeClass("present");
         $(this).addClass("future");
       }  
   });
@@ -46,18 +50,13 @@ function trackHours(){ // pull number of hours, update class
 trackHours();
 
 function displayTime() {
-  $(".time-block").each(function(){
-    var hourInput = $(this).attr("id");
-    $(this).children(".description").val(localStorage.getItem(hourInput));
-    console.log(localStorage)
-  });
-} 
+  const currentTime = dayjs().format("dddd, MMMM D, YYYY, HH:mm:ss");
+  showTime.textContent = currentTime;
+  console.log(currentTime) 
 
-setInterval(function() {
-     displayTime();
-     displayDate();
-});
+}
 
+})
 
 // $(function () {});
   // TODO: Add a listener for click events on the save button. This code should
