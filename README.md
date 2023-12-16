@@ -8,7 +8,7 @@
 
 #### _Links_
 * <a href="https://github.com/F3N215/scheduler-challenge/blob/main/Develop/index.html">HTML</a>
-* <a href=“https://github.com/F3N215/scheduler-challenge/blob/main/Develop/assets/css/style.css">CSS</a>
+* <a href="https://github.com/F3N215/scheduler-challenge/blob/main/Develop/assets/css/style.css">CSS</a>
 * <a href="https://github.com/F3N215/scheduler-challenge/blob/main/Develop/assets/js/script.js">JS</a>
 
 -----
