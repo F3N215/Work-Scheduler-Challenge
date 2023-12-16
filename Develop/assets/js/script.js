@@ -15,7 +15,7 @@ setInterval(function() {
 } ,1000);
 
 // save button
-  $(".saveBtn").on("click", function(){ // add event listener, returns row id
+  $(".saveBtn").on("click", function(){ // event listener, returns row id
     // not a let, uses execution of different function via click event -- when this function runs it refers to its own particular instant
     const text = $(this).siblings(".description").val(); 
     const time = $(this).parent().attr("id");
