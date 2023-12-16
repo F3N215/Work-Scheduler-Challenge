@@ -10,7 +10,6 @@ body {
 }
 
 textarea {
-  background: transparent;
   border-style: double;
   resize: none;
   color: #000000;
