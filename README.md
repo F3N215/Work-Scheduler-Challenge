@@ -31,8 +31,7 @@
 * Worked through developing the trackHours function to pull # of hours and update the HTML class using day.js 
 * Slowly worked through logic to pull the element id and show only the hour 
 * Worked out ‘if, else if’ statements to replace time block element ids with past, present or future * Cleaned up HTML to allow for dynamic changes * Changed font styles using Google Fonts, and updated save button stylings to give them more of a “punch down” effect * Added media queries for correct sizing on mobile * Tested ‘sunrise’ colour pallet for gradient and changed to background image instead
-  
- -----
+
 ## Screenshots 📸
 * ![Initial Screenshot](Assets/Screenshot-1.png)
 * ![Updated background](Assets/Screenshot-2.png)
