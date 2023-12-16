@@ -4,12 +4,11 @@
 <p align="left">
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/>
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/>
-<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a>  
-</p>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a></p>
 
 #### _Links_
 * <a href="https://github.com/F3N215/scheduler-challenge/blob/main/Develop/index.html">HTML</a>
-* <a href=“https://github.com/F3N215/scheduler-challenge/blob/main/Develop/assets/css/style.css>CSS</a>
+* <a href=“https://github.com/F3N215/scheduler-challenge/blob/main/Develop/assets/css/style.css">CSS</a>
 * <a href="https://github.com/F3N215/scheduler-challenge/blob/main/Develop/assets/js/script.js">JS</a>
 
 -----
@@ -32,6 +31,7 @@
 * Worked through developing the trackHours function to pull # of hours and update the HTML class using day.js 
 * Slowly worked through logic to pull the element id and show only the hour 
 * Worked out ‘if, else if’ statements to replace time block element ids with past, present or future * Cleaned up HTML to allow for dynamic changes * Changed font styles using Google Fonts, and updated save button stylings to give them more of a “punch down” effect * Added media queries for correct sizing on mobile * Tested ‘sunrise’ colour pallet for gradient and changed to background image instead
+  
  -----
 ## Screenshots 📸
 * ![Initial Screenshot](Assets/Screenshot-1.png)
