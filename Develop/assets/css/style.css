@@ -1,8 +1,9 @@
 body {
   font-family: 'Afacad', sans-serif;
   font-size: 16px;
-  background-image: linear-gradient(40deg, #fff2bd 5%, #F4D797 10%, #ebb58a 25%, #da7f7d 30%);
+  background-image: linear-gradient(40deg, #fff2bd 5%, #F4D797 10%, #ebb58a 15%, #da7f7d 25%, #b5728e 50%);
   background-attachment: fixed;
+  background-size: auto;
 }
 
 textarea {
