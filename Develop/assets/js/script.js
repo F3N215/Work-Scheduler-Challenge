@@ -26,19 +26,19 @@ function trackHours(){ // pulls number of hours, updates class
   const currentHour = dayjs().hour();
 
     $(".time-block").each(function() {
-      const parentId = $(this).attr("id")
-      const hourBlock = parseInt(parentId.split("-")[1]);
-      const savedText = localStorage.getItem(parentId);
-        $(this).children(".description").val(savedText);
+      const parentId = $(this).attr("id") // pulls time-block id 
+      const hourBlock = parseInt(parentId.split("-")[1]); // split id at the hyphen, pulls second value of the array (the hour)
+      const savedText = localStorage.getItem(parentId); // pulls value stored from saveBtn event listener function
+        $(this).children(".description").val(savedText); // sets value of child element to stored value 
 
         console.log(hourBlock, currentHour)
 
       if (hourBlock < currentHour) { // compare id hour to current hour
-        $(this).addClass("past");
+        $(this).addClass("past"); // if less than value of currentHour -> 'past'
         console.log("past")
-      } else if (hourBlock === currentHour) {
+      } else if (hourBlock === currentHour) { // if equal to currentHour --> add 'present' or 'future'
         $(this).addClass("present");
-        console.log("present")
+      //  console.log("present")
       } else {
         $(this).addClass("future");
       }  
