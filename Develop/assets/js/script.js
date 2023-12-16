@@ -2,7 +2,7 @@
 $(document).ready(function() {
 
 function displayDate() {
-  const currentDate = dayjas().format('dddd, MMMM D, YYYY');
+  const currentDate = dayjs().format('dddd, MMMM D, YYYY');
   $("#currentDate").text(currentDate);
 }
 
